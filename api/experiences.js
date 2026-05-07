@@ -3,7 +3,7 @@ let globalCache = null;
 let lastFetchTime = 0;
 const CACHE_HOURS = 24;
 // THE UNIQUE TSV LINK FOR ERIE EXPERIENCES GOES HERE:
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS4PxMMqBMapxichAK0yVLbhfB6vtQPeWMrsBL_TDS881oVZ_DSNVVXx8-zT9ME0Kh8Pvx5na2HKy2I/pub?gid=0&single=true&output=tsv';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS4PxMMqBMapxichAK0yVLbhfB6vtQPeWMrsBL_TDS881oVZ_DSNVVXx8-zT9ME0Kh8Pvx5na2HKy2I/pub?gid=1052947774&single=true&output=tsv';
 
 export default async function handler(req, res) {
     // 1. SECURITY (CORS): This tells Vercel to only talk to your Arrow & East website
