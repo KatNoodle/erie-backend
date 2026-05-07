@@ -2,13 +2,14 @@
 let globalCache = null;
 let lastFetchTime = 0;
 const CACHE_HOURS = 24;
+
 // THE UNIQUE TSV LINK FOR FOOD & DRINK GOES HERE:
 const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS4PxMMqBMapxichAK0yVLbhfB6vtQPeWMrsBL_TDS881oVZ_DSNVVXx8-zT9ME0Kh8Pvx5na2HKy2I/pub?gid=1143193641&single=true&output=tsv';
 
 export default async function handler(req, res) {
-    // 1. SECURITY (CORS): This tells Vercel to only talk to your Arrow & East website
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.erie-pa-centeroftheuniverse.com');
+    // 1. SECURITY (CORS): Master unlock
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
 
     // Handle standard browser pre-flight checks
@@ -30,7 +31,7 @@ export default async function handler(req, res) {
         const fetchResponse = await fetch(SHEET_URL);
         const data = await fetchResponse.text();
         
-        // Save the new data to Vercel's global memory for the next 24 hours
+        // Save the new data to Vercel's global memory
         globalCache = data;
         lastFetchTime = now;
         
