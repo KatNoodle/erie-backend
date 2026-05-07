@@ -8,7 +8,7 @@ const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS4PxMMqBMapx
 export default async function handler(req, res) {
     // 1. SECURITY (CORS): This tells Vercel to only talk to your Arrow & East website
     res.setHeader('Access-Control-Allow-Credentials', true);
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.erie-pa-centeroftheuniverse.com');
+    res.setHeader('*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
 
     // Handle standard browser pre-flight checks
